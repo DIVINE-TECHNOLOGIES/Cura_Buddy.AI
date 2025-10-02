@@ -1,0 +1,257 @@
+{
+  "diseases": [
+    {
+      "name": {
+        "en": "Common Cold",
+        "hi": "सर्दी",
+        "ta": "குளிர்",
+        "te": "జలుబు"
+      },
+      "symptoms": {
+        "en": ["runny nose", "sore throat", "cough", "sneezing", "congestion"],
+        "hi": ["नाक बहना", "गले में दर्द", "खांसी", "छींक आना", "बंद नाक"],
+        "ta": ["மூக்கு ஒழுகுதல்", "தொண்டை வலி", "இருமல்", "தும்மல்", "நெரிசல்"],
+        "te": ["ముక్కు పారుదల", "గొంతు నొప్పి", "దగ్గు", "తుమ్ము", "నిరోధం"]
+      },
+      "cure": {
+        "en": "Rest, hydration, and over-the-counter cold remedies",
+        "hi": "आराम, हाइड्रेशन और ओवर-द-काउंटर ठंड की दवाएं",
+        "ta": "ஓய்வு, நீரேற்றம் மற்றும் கவுண்டரில் குளிர் மருந்துகள்",
+        "te": "విశ్రాంతి, హైడ్రేషన్ మరియు ఓవర్-ద-కౌంటర్ కోల్డ్ రిమెడీలు"
+      },
+      "medicines": ["Paracetamol", "Ibuprofen", "Decongestants"]
+    },
+    {
+      "name": {
+        "en": "Influenza",
+        "hi": "इन्फ्लूएंजा",
+        "ta": "இன்புளூன்ஸா",
+        "te": "ఇన్ఫ్లుయెన్జా"
+      },
+      "symptoms": {
+        "en": ["fever", "chills", "muscle aches", "cough", "fatigue"],
+        "hi": ["बुखार", "ठंड लगना", "मांसपेशियों में दर्द", "खांसी", "थकान"],
+        "ta": ["காய்ச்சல்", "குளிர்", "தசை வலி", "இருமல்", "சோர்வு"],
+        "te": ["జ్వరం", "చలి", "కండరాల నొప్పి", "దగ్గు", "అలసట"]
+      },
+      "cure": {
+        "en": "Antiviral medications, rest, and fluids",
+        "hi": "एंटीवायरल दवाएं, आराम और तरल पदार्थ",
+        "ta": "ஆன்டிவைரல் மருந்துகள், ஓய்வு மற்றும் திரவங்கள்",
+        "te": "ఆంటీవైరల్ మందులు, విశ్రాంతి మరియు ద్రవాలు"
+      },
+      "medicines": ["Oseltamivir", "Zanamivir", "Paracetamol"]
+    },
+    {
+      "name": {
+        "en": "Migraine",
+        "hi": "माइग्रेन",
+        "ta": "போதைக்குறைவு",
+        "te": "మైగ్రెయిన్"
+      },
+      "symptoms": {
+        "en": ["headache", "nausea", "sensitivity to light", "sensitivity to sound"],
+        "hi": ["सिरदर्द", "मतली", "रोशनी से संवेदनशीलता", "आवाज से संवेदनशीलता"],
+        "ta": ["தலைவலி", "வாந்தி", "ஒளிக்கு உணர்திறன்", "ஒலிக்கு உணர்திறன்"],
+        "te": ["తలనొప్పి", "వికారం", "కాంతికి సెన్సిటివిటీ", "శబ్దానికి సెన్సిటివిటీ"]
+      },
+      "cure": {
+        "en": "Pain relief medications and lifestyle changes",
+        "hi": "दर्द निवारक दवाएं और जीवनशैली में बदलाव",
+        "ta": "வலி நிவாரண மருந்துகள் மற்றும் வாழ்க்கை மாற்றங்கள்",
+        "te": "నొప్పి నివారణ మందులు మరియు జీవనశైలి మార్పులు"
+      },
+      "medicines": ["Ibuprofen", "Sumatriptan", "Naproxen"]
+    },
+    {
+      "name": {
+        "en": "Diabetes Mellitus",
+        "hi": "मधुमेह",
+        "ta": "நீரிழிவு நோய்",
+        "te": "మధుమేహం"
+      },
+      "symptoms": {
+        "en": ["frequent urination", "increased thirst", "fatigue", "blurred vision", "slow-healing sores"],
+        "hi": ["बार-बार पेशाब", "प्यास बढ़ना", "थकान", "धुंधली दृष्टि", "धीरे ठीक होने वाले घाव"],
+        "ta": ["அடிக்கடி சிறுநீர்ப்பை", "தாகம் அதிகரித்தல்", "சோர்வு", "மங்கலான பார்வை", "மெதுவாக குணமாகும் புண்கள்"],
+        "te": ["తరచుగా మూత్రం", "దాహం పెరుగుట", "అలసట", "మసకబారిన దృష్టి", "నెమ్మదిగా మాన్యమయ్యే గాయాలు"]
+      },
+      "cure": {
+        "en": "Lifestyle modifications, insulin therapy, and oral hypoglycemics",
+        "hi": "जीवनशैली में बदलाव, इंसुलिन थेरेपी और मौखिक हाइपोग्लाइसेमिक्स",
+        "ta": "வாழ்க்கை மாற்றங்கள், இன்சுலின் சிகிச்சை மற்றும் வாய்வழி ஹைப்போகிளைசெமிக்ஸ்",
+        "te": "జీవనశైలి మార్పులు, ఇన్సులిన్ థెరపీ మరియు ఆరల్ హైపోగ్లైసెమిక్స్"
+      },
+      "medicines": ["Metformin", "Insulin", "Glipizide"]
+    },
+    {
+      "name": {
+        "en": "Hypertension",
+        "hi": "उच्च रक्तचाप",
+        "ta": "உயர் இரத்த அழுத்தம்",
+        "te": "అధిక రక్తపోటు"
+      },
+      "symptoms": {
+        "en": ["headache", "dizziness", "chest pain", "shortness of breath", "nosebleeds"],
+        "hi": ["सिरदर्द", "चक्कर आना", "छाती में दर्द", "सांस फूलना", "नाक से खून बहना"],
+        "ta": ["தலைவலி", "தலைச்சுற்றல்", "மார்பு வலி", "மூச்சு குறைவு", "மூக்கில் இரத்தம் வருதல்"],
+        "te": ["తలనొప్పి", "తలతిరుగుడు", "వక్షస్థల నొప్పి", "ఉబ్బసం", "ముక్కు నుండి రక్తం"]
+      },
+      "cure": {
+        "en": "Lifestyle changes, antihypertensive medications",
+        "hi": "जीवनशैली में बदलाव, उच्च रक्तचाप विरोधी दवाएं",
+        "ta": "வாழ்க்கை மாற்றங்கள், உயர் இரத்த அழுத்த எதிர்ப்பு மருந்துகள்",
+        "te": "జీవనశైలి మార్పులు, అధిక రక్తపోటు వ్యతిరేక మందులు"
+      },
+      "medicines": ["Amlodipine", "Lisinopril", "Hydrochlorothiazide"]
+    },
+    {
+      "name": {
+        "en": "Asthma",
+        "hi": "दमा",
+        "ta": "ஆஸ்துமா",
+        "te": "ఆస్తమా"
+      },
+      "symptoms": {
+        "en": ["wheezing", "coughing", "shortness of breath", "chest tightness", "difficulty sleeping"],
+        "hi": ["सीटी बजना", "खांसी", "सांस फूलना", "छाती में जकड़न", "नींद न आना"],
+        "ta": ["கீச்சிடுதல்", "இருமல்", "மூச்சு குறைவு", "மார்பு இறுக்கம்", "தூங்குவதில் சிரமம்"],
+        "te": ["గుసగుసలాడటం", "దగ్గు", "ఉబ్బసం", "వక్షస్థల ఇరుక్కుపోవు", "నిద్రించడంలో కష్టం"]
+      },
+      "cure": {
+        "en": "Inhaler medications, avoiding triggers, and long-term control",
+        "hi": "इन्हेलर दवाएं, ट्रिगर्स से बचना और दीर्घकालीन नियंत्रण",
+        "ta": "இன்ஹேலர் மருந்துகள், தூண்டுதல்களைத் தவிர்த்தல் மற்றும் நீண்டகால கட்டுப்பாடு",
+        "te": "ఇన్హేలర్ మందులు, ట్రిగ్గర్లను నివారించడం మరియు దీర్ఘకాల నియంత్రణ"
+      },
+      "medicines": ["Albuterol", "Fluticasone", "Montelukast"]
+    },
+    {
+      "name": {
+        "en": "Pneumonia",
+        "hi": "निमोनिया",
+        "ta": "நிமோனியா",
+        "te": "న్యూమోనియా"
+      },
+      "symptoms": {
+        "en": ["cough with phlegm", "fever", "chills", "shortness of breath", "chest pain"],
+        "hi": ["बलगम के साथ खांसी", "बुखार", "ठंड लगना", "सांस फूलना", "छाती में दर्द"],
+        "ta": ["இருமல் மூலம் கபம்", "காய்ச்சல்", "குளிர்", "மூச்சு குறைவு", "மார்பு வலி"],
+        "te": ["ఫ్లెగ్మ్ తో దగ్గు", "జ్వరం", "చలి", "ఉబ్బసం", "వక్షస్థల నొప్పి"]
+      },
+      "cure": {
+        "en": "Antibiotics, rest, and supportive care",
+        "hi": "एंटीबायोटिक्स, आराम और सहायक देखभाल",
+        "ta": "ஆன்டிபயாடிக்ஸ், ஓய்வு மற்றும் ஆதரவு பராமரிப்பு",
+        "te": "ఆంటీబయోటిక్స్, విశ్రాంతి మరియు మద్దతు సంరక్షణ"
+      },
+      "medicines": ["Amoxicillin", "Azithromycin", "Ceftriaxone"]
+    },
+    {
+      "name": {
+        "en": "COVID-19",
+        "hi": "कोविड-19",
+        "ta": "கோவிட்-19",
+        "te": "కోవిడ్-19"
+      },
+      "symptoms": {
+        "en": ["fever", "cough", "loss of taste or smell", "fatigue", "shortness of breath"],
+        "hi": ["बुखार", "खांसी", "स्वाद या गंध खोना", "थकान", "सांस फूलना"],
+        "ta": ["காய்ச்சல்", "இருமல்", "சுவை அல்லது வாசனை இழப்பு", "சோர்வு", "மூச்சு குறைவு"],
+        "te": ["జ్వరం", "దగ్గు", "రుచి లేదా వాసన నష్టం", "అలసట", "ఉబ్బసం"]
+      },
+      "cure": {
+        "en": "Supportive care, antiviral medications if indicated",
+        "hi": "सहायक देखभाल, यदि संकेत मिले तो एंटीवायरल दवाएं",
+        "ta": "ஆதரவு பராமரிப்பு, குறிக்கப்பட்டால் ஆன்டிவைரல் மருந்துகள்",
+        "te": "మద్దతు సంరక్షణ, సూచించినట్లయితే ఆంటీవైరల్ మందులు"
+      },
+      "medicines": ["Remdesivir", "Dexamethasone", "Molnupiravir"]
+    },
+    {
+      "name": {
+        "en": "Tuberculosis",
+        "hi": "क्षय रोग",
+        "ta": "நுரையீரல் காசநோய்",
+        "te": "క్షయం"
+      },
+      "symptoms": {
+        "en": ["persistent cough", "weight loss", "night sweats", "fever", "coughing up blood"],
+        "hi": ["लगातार खांसी", "वजन घटना", "रात में पसीना", "बुखार", "खून उगलना"],
+        "ta": ["நீடித்த இருமல்", "எடை இழப்பு", "இரவில் வியர்வை", "காய்ச்சல்", "இரத்தம் கக்குதல்"],
+        "te": ["నిరంతర దగ్గు", "బరువు తగ్గుట", "రాత్రి చెమటలు", "జ్వరం", "రక్తం ఉగ్గు"]
+      },
+      "cure": {
+        "en": "Long-term antibiotic therapy",
+        "hi": "दीर्घकालीन एंटीबायोटिक थेरेपी",
+        "ta": "நீண்டகால ஆன்டிபயாடிக் சிகிச்சை",
+        "te": "దీర్ఘకాల ఆంటీబయోటిక్ థెరపీ"
+      },
+      "medicines": ["Isoniazid", "Rifampin", "Pyrazinamide"]
+    },
+    {
+      "name": {
+        "en": "Malaria",
+        "hi": "मलेरिया",
+        "ta": "மலேரியா",
+        "te": "మలేరియా"
+      },
+      "symptoms": {
+        "en": ["fever", "chills", "headache", "nausea", "muscle pain"],
+        "hi": ["बुखार", "ठंड लगना", "सिरदर्द", "मतली", "मांसपेशियों में दर्द"],
+        "ta": ["காய்ச்சல்", "குளிர்", "தலைவலி", "வாந்தி", "தசை வலி"],
+        "te": ["జ్వరం", "చలి", "తలనొప్పి", "వికారం", "కండరాల నొప్పి"]
+      },
+      "cure": {
+        "en": "Antimalarial medications",
+        "hi": "एंटीमलेरियल दवाएं",
+        "ta": "ஆன்டிமலேரியல் மருந்துகள்",
+        "te": "ఆంటీమలేరియల్ మందులు"
+      },
+      "medicines": ["Chloroquine", "Artemisinin", "Mefloquine"]
+    },
+    {
+      "name": "Dengue Fever",
+      "symptoms": ["high fever", "severe headache", "pain behind eyes", "joint and muscle pain", "rash"],
+      "cure": "Supportive care, hydration, and pain relief",
+      "medicines": ["Paracetamol", "Intravenous fluids", "Antiemetics"]
+    },
+    {
+      "name": "Hepatitis B",
+      "symptoms": ["fatigue", "jaundice", "abdominal pain", "loss of appetite", "nausea"],
+      "cure": "Antiviral therapy and supportive care",
+      "medicines": ["Entecavir", "Tenofovir", "Lamivudine"]
+    },
+    {
+      "name": "Heart Attack",
+      "symptoms": ["chest pain", "shortness of breath", "nausea", "lightheadedness", "cold sweat"],
+      "cure": "Emergency medical intervention, medications, and lifestyle changes",
+      "medicines": ["Aspirin", "Nitroglycerin", "Beta-blockers"]
+    },
+    {
+      "name": "Stroke",
+      "symptoms": ["sudden numbness", "confusion", "trouble speaking", "vision problems", "difficulty walking"],
+      "cure": "Immediate medical treatment, rehabilitation, and preventive medications",
+      "medicines": ["Tissue Plasminogen Activator", "Aspirin", "Clopidogrel"]
+    },
+    {
+      "name": "Arthritis",
+      "symptoms": ["joint pain", "stiffness", "swelling", "reduced range of motion", "fatigue"],
+      "cure": "Pain management, physical therapy, and anti-inflammatory medications",
+      "medicines": ["Ibuprofen", "Methotrexate", "Prednisone"]
+    },
+    {
+      "name": "Depression",
+      "symptoms": ["persistent sadness", "loss of interest", "changes in sleep", "fatigue", "difficulty concentrating"],
+      "cure": "Therapy, medications, and lifestyle changes",
+      "medicines": ["Sertraline", "Fluoxetine", "Escitalopram"]
+    },
+    {
+      "name": {
+        "en": "Anxiety Disorder",
+        "hi": "चिंता विकार",
+        "ta": "கவலை குறைபாடு",
+        "te": "ఆందోళన రోగం"
+      },
+      "symptoms": {
+        "en": ["excessive worry", "restlessness", "rapid heartbeat", "sweating", "trembling"],

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cura Buddy AI Healthcare</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">
+                <span class="logo-main">CURA BUDDY</span>
+                <span class="logo-subtitle">Your AI Healthcare Companion</span>
+            </h1>
+            <ul class="nav-menu">
+                <li><a href="#home" data-key="home">Home</a></li>
+                <li><a href="#features" data-key="features">Features</a></li>
+                <li><a href="#symptom-checker" data-key="symptomChecker">Symptom Checker</a></li>
+                <li><a href="#ask-ai" data-key="askAI">Ask AI</a></li>
+                <li><a href="#contact" data-key="contact">Contact</a></li>
+            </ul>
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+                <option value="ta">தமிழ்</option>
+                <option value="te">తెలుగు</option>
+            </select>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h2 data-key="heroTitle">Your AI-Powered Healthcare Companion</h2>
+            <p data-key="heroDesc">Get instant medical guidance, symptom analysis, and health recommendations with our intelligent AI assistant.</p>
+            <a href="#symptom-checker" class="btn-primary" data-key="getStarted">Get Started</a>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <h2 data-key="featuresTitle">Features</h2>
+        <div class="features-cards">
+            <div class="feature-card">
+                <h3 data-key="symptomChecker">Symptom Checker</h3>
+                <p data-key="symptomCheckerDesc">Input your symptoms and get possible conditions.</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-key="medicationGuidance">Medication Guidance</h3>
+                <p data-key="medicationDesc">Provides drug information, usage, and side effects.</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-key="healthMonitoring">Health Monitoring</h3>
+                <p data-key="healthDesc">Tracks vital signs and generates health reports.</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-key="doctorSupport">Doctor Consultation Support</h3>
+                <p data-key="doctorDesc">Suggests when to seek professional care.</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-key="multiLanguage">Multi-Language Support</h3>
+                <p data-key="multiDesc">English, Hindi, Tamil, Telugu.</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-key="aiQA">AI-Powered Q&A</h3>
+                <p data-key="aiDesc">Ask health-related questions and get instant answers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="symptom-checker" class="input-section">
+        <h2 data-key="symptomTitle">Symptom Checker</h2>
+        <form id="symptom-checker-form" autocomplete="off">
+          <input type="text" id="symptom-input" data-key="symptomPlaceholder" placeholder="Enter your symptoms..." />
+          <div id="suggestions" class="suggestions"></div>
+          <button type="submit" data-key="checkBtn">Check</button>
+        </form>
+        <div id="result" class="result" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #1E90FF; border-radius: 8px; background-color: #f0f8ff;"></div>
+    </section>
+
+    <section id="ask-ai" class="input-section">
+        <h2 data-key="askTitle">Ask AI</h2>
+        <form>
+            <input type="text" data-key="askPlaceholder" placeholder="Ask a health-related question..." />
+            <button type="submit" data-key="askBtn">Ask</button>
+        </form>
+    </section>
+
+    <footer id="contact" class="footer-section">
+        <p data-key="footer">© 2024 Cura_Buddy.AI. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
