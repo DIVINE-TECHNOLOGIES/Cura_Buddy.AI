@@ -172,8 +172,14 @@ function findDiseaseBySymptoms(inputSymptoms, diseases) {
   let maxMatches = 0;
 
   for (const disease of diseases) {
-    const diseaseSymptoms = disease.symptoms.map(s => s.toLowerCase());
-    const matches = diseaseSymptoms.filter(symptom => inputSet.has(symptom)).length;
+    let diseaseSymptoms = [];
+    if (typeof disease.symptoms === 'object') {
+      diseaseSymptoms = Object.values(disease.symptoms).flat();
+    } else {
+      diseaseSymptoms = disease.symptoms || [];
+    }
+    const diseaseSymptomsLower = diseaseSymptoms.map(s => s.toLowerCase());
+    const matches = diseaseSymptomsLower.filter(symptom => inputSet.has(symptom)).length;
     if (matches > maxMatches) {
       maxMatches = matches;
       bestMatch = disease;
@@ -185,10 +191,10 @@ function findDiseaseBySymptoms(inputSymptoms, diseases) {
 document.addEventListener('DOMContentLoaded', async () => {
   const diseases = await loadSymptomsData();
 
-  // Flatten all symptoms in current language for suggestions
+  // Flatten all symptoms in all languages for suggestions
   const allSymptoms = [...new Set(diseases.flatMap(d => {
     if (typeof d.symptoms === 'object') {
-      return d.symptoms[currentLanguage] || d.symptoms['en'] || [];
+      return Object.values(d.symptoms).flat();
     }
     return d.symptoms || [];
   }))];
@@ -239,7 +245,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert(translations[currentLanguage].enterSymptomsAlert);
       return;
     }
-    const inputSymptoms = inputText.split(',').map(s => s.trim()).filter(s => s);
+    let inputSymptoms = inputText.split(',').map(s => s.trim()).filter(s => s);
+
+    const diseases = await loadSymptomsData();
     const disease = findDiseaseBySymptoms(inputSymptoms, diseases);
 
     if (disease) {
@@ -276,7 +284,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadSymptomsData().then(diseases => {
       const allSymptoms = [...new Set(diseases.flatMap(d => {
         if (typeof d.symptoms === 'object') {
-          return d.symptoms[newLang] || d.symptoms['en'] || [];
+          return Object.values(d.symptoms).flat();
         }
         return d.symptoms || [];
       }))];
@@ -315,5 +323,51 @@ document.addEventListener('DOMContentLoaded', async () => {
         setLanguage(newLang);
       }, 0);
     });
+  });
+
+  // Ask AI functionality
+  const askForm = document.getElementById('ask-ai-form');
+  const askInput = document.getElementById('ask-input');
+  const askResult = document.getElementById('ask-result');
+
+  function getAIResponse(question, diseases) {
+    const q = question.toLowerCase();
+    // Check if question mentions a disease
+    for (const disease of diseases) {
+      const names = typeof disease.name === 'object' ? Object.values(disease.name) : [disease.name];
+      if (names.some(name => q.includes(name.toLowerCase()))) {
+        const name = (typeof disease.name === 'object') ? (disease.name[currentLanguage] || disease.name['en'] || disease.name) : disease.name;
+        const cure = (typeof disease.cure === 'object') ? (disease.cure[currentLanguage] || disease.cure['en'] || disease.cure) : disease.cure;
+        return `For ${name}: ${cure}. Medicines: ${disease.medicines.join(', ')}. Please consult a doctor for personalized advice.`;
+      }
+    }
+    // Check if question mentions symptoms
+    for (const disease of diseases) {
+      let symptoms = [];
+      if (typeof disease.symptoms === 'object') {
+        symptoms = Object.values(disease.symptoms).flat();
+      } else {
+        symptoms = disease.symptoms || [];
+      }
+      if (symptoms.some(symptom => q.includes(symptom.toLowerCase()))) {
+        const name = (typeof disease.name === 'object') ? (disease.name[currentLanguage] || disease.name['en'] || disease.name) : disease.name;
+        return `Your symptoms might indicate ${name}. Please use the Symptom Checker for more details or consult a doctor.`;
+      }
+    }
+    // General response
+    return "I'm here to help with health-related questions. For accurate diagnosis and treatment, please consult a qualified healthcare professional. I can provide general information based on common knowledge.";
+  }
+
+  askForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = askInput.value.trim();
+    if (!question) {
+      alert(translations[currentLanguage].enterSymptomsAlert || "Please enter a question.");
+      return;
+    }
+    const diseases = await loadSymptomsData();
+    const response = getAIResponse(question, diseases);
+    askResult.innerHTML = `<p><strong>AI Response:</strong> ${response}</p>`;
+    askResult.style.display = 'block';
   });
 });

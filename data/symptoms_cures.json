@@ -211,39 +211,75 @@
       "medicines": ["Chloroquine", "Artemisinin", "Mefloquine"]
     },
     {
-      "name": "Dengue Fever",
-      "symptoms": ["high fever", "severe headache", "pain behind eyes", "joint and muscle pain", "rash"],
-      "cure": "Supportive care, hydration, and pain relief",
+      "name": {
+        "en": "Dengue Fever"
+      },
+      "symptoms": {
+        "en": ["high fever", "severe headache", "pain behind eyes", "joint and muscle pain", "rash"]
+      },
+      "cure": {
+        "en": "Supportive care, hydration, and pain relief"
+      },
       "medicines": ["Paracetamol", "Intravenous fluids", "Antiemetics"]
     },
     {
-      "name": "Hepatitis B",
-      "symptoms": ["fatigue", "jaundice", "abdominal pain", "loss of appetite", "nausea"],
-      "cure": "Antiviral therapy and supportive care",
+      "name": {
+        "en": "Hepatitis B"
+      },
+      "symptoms": {
+        "en": ["fatigue", "jaundice", "abdominal pain", "loss of appetite", "nausea"]
+      },
+      "cure": {
+        "en": "Antiviral therapy and supportive care"
+      },
       "medicines": ["Entecavir", "Tenofovir", "Lamivudine"]
     },
     {
-      "name": "Heart Attack",
-      "symptoms": ["chest pain", "shortness of breath", "nausea", "lightheadedness", "cold sweat"],
-      "cure": "Emergency medical intervention, medications, and lifestyle changes",
+      "name": {
+        "en": "Heart Attack"
+      },
+      "symptoms": {
+        "en": ["chest pain", "shortness of breath", "nausea", "lightheadedness", "cold sweat"]
+      },
+      "cure": {
+        "en": "Emergency medical intervention, medications, and lifestyle changes"
+      },
       "medicines": ["Aspirin", "Nitroglycerin", "Beta-blockers"]
     },
     {
-      "name": "Stroke",
-      "symptoms": ["sudden numbness", "confusion", "trouble speaking", "vision problems", "difficulty walking"],
-      "cure": "Immediate medical treatment, rehabilitation, and preventive medications",
+      "name": {
+        "en": "Stroke"
+      },
+      "symptoms": {
+        "en": ["sudden numbness", "confusion", "trouble speaking", "vision problems", "difficulty walking"]
+      },
+      "cure": {
+        "en": "Immediate medical treatment, rehabilitation, and preventive medications"
+      },
       "medicines": ["Tissue Plasminogen Activator", "Aspirin", "Clopidogrel"]
     },
     {
-      "name": "Arthritis",
-      "symptoms": ["joint pain", "stiffness", "swelling", "reduced range of motion", "fatigue"],
-      "cure": "Pain management, physical therapy, and anti-inflammatory medications",
+      "name": {
+        "en": "Arthritis"
+      },
+      "symptoms": {
+        "en": ["joint pain", "stiffness", "swelling", "reduced range of motion", "fatigue"]
+      },
+      "cure": {
+        "en": "Pain management, physical therapy, and anti-inflammatory medications"
+      },
       "medicines": ["Ibuprofen", "Methotrexate", "Prednisone"]
     },
     {
-      "name": "Depression",
-      "symptoms": ["persistent sadness", "loss of interest", "changes in sleep", "fatigue", "difficulty concentrating"],
-      "cure": "Therapy, medications, and lifestyle changes",
+      "name": {
+        "en": "Depression"
+      },
+      "symptoms": {
+        "en": ["persistent sadness", "loss of interest", "changes in sleep", "fatigue", "difficulty concentrating"]
+      },
+      "cure": {
+        "en": "Therapy, medications, and lifestyle changes"
+      },
       "medicines": ["Sertraline", "Fluoxetine", "Escitalopram"]
     },
     {
@@ -255,3 +291,17 @@
       },
       "symptoms": {
         "en": ["excessive worry", "restlessness", "rapid heartbeat", "sweating", "trembling"],
+        "hi": ["अत्यधिक चिंता", "बेचैनी", "तेज दिल की धड़कन", "पसीना", "कांपना"],
+        "ta": ["அதிக கவலை", "அமைதியின்மை", "விரைவான இதய துடிப்பு", "வியர்வை", "நடுக்கம்"],
+        "te": ["అత్యధిక చింత", "అశాంతి", "వేగమైన హృదయ స్పందన", "చెమట", "వణుకు"]
+      },
+      "cure": {
+        "en": "Therapy, medications, and lifestyle changes",
+        "hi": "चिकित्सा, दवाएं और जीवनशैली में बदलाव",
+        "ta": "சிகிச்சை, மருந்துகள் மற்றும் வாழ்க்கை மாற்றங்கள்",
+        "te": "చికిత్స, మందులు మరియు జీవనశైలి మార్పులు"
+      },
+      "medicines": ["Sertraline", "Fluoxetine", "Escitalopram"]
+    }
+  ]
+}

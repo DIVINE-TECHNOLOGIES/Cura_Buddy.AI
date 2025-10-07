@@ -79,10 +79,11 @@
 
     <section id="ask-ai" class="input-section">
         <h2 data-key="askTitle">Ask AI</h2>
-        <form>
-            <input type="text" data-key="askPlaceholder" placeholder="Ask a health-related question..." />
+        <form id="ask-ai-form">
+            <input type="text" id="ask-input" data-key="askPlaceholder" placeholder="Ask a health-related question..." />
             <button type="submit" data-key="askBtn">Ask</button>
         </form>
+        <div id="ask-result" class="result" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #1E90FF; border-radius: 8px; background-color: #f0f8ff;"></div>
     </section>
 
     <footer id="contact" class="footer-section">
