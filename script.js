@@ -23,9 +23,11 @@ const translations = {
     symptomTitle: "Symptom Checker",
     symptomPlaceholder: "Enter your symptoms...",
     checkBtn: "Check",
-    askTitle: "Ask AI",
-    askPlaceholder: "Ask a health-related question...",
-    askBtn: "Ask",
+    chatbot: "AI Chatbot",
+    chatbotTitle: "AI Chatbot",
+    chatbotDesc: "Chat with our cute robo assistant for health advice.",
+    chatPlaceholder: "Ask me anything...",
+    sendBtn: "Send",
     footer: "© 2024 Cura_Buddy.AI. All rights reserved.",
     enterSymptomsAlert: "Please enter your symptoms.",
     possibleDisease: "Possible Disease:",
@@ -57,9 +59,11 @@ const translations = {
     symptomTitle: "लक्षण जांचकर्ता",
     symptomPlaceholder: "अपने लक्षण दर्ज करें...",
     checkBtn: "जांचें",
-    askTitle: "एआई से पूछें",
-    askPlaceholder: "स्वास्थ्य से संबंधित प्रश्न पूछें...",
-    askBtn: "पूछें",
+    chatbot: "एआई चैटबॉट",
+    chatbotTitle: "एआई चैटबॉट",
+    chatbotDesc: "हमारे प्यारे रोबो सहायक से स्वास्थ्य सलाह के लिए चैट करें।",
+    chatPlaceholder: "मुझसे कुछ भी पूछें...",
+    sendBtn: "भेजें",
     footer: "© 2024 Cura_Buddy.AI. सर्वाधिकार सुरक्षित।",
     enterSymptomsAlert: "कृपया अपने लक्षण दर्ज करें।",
     possibleDisease: "संभावित रोग:",
@@ -91,9 +95,11 @@ const translations = {
     symptomTitle: "அறிகுறி சரிபார்ப்பு",
     symptomPlaceholder: "உங்கள் அறிகுறிகளை உள்ளீடு செய்யுங்கள்...",
     checkBtn: "சரிபார்",
-    askTitle: "AI-யிடம் கேளுங்கள்",
-    askPlaceholder: "சுகாதாரம் தொடர்பான கேள்வியைக் கேளுங்கள்...",
-    askBtn: "கேளுங்கள்",
+    chatbot: "AI சாட்பாட்",
+    chatbotTitle: "AI சாட்பாட்",
+    chatbotDesc: "எங்கள் அன்பான ரோபோ உதவியாளருடன் சுகாதார ஆலோசனைக்கு அரட்டை செய்யுங்கள்.",
+    chatPlaceholder: "என்னிடம் எதையும் கேளுங்கள்...",
+    sendBtn: "அனுப்பு",
     footer: "© 2024 Cura_Buddy.AI. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
     enterSymptomsAlert: "உங்கள் அறிகுறிகளை உள்ளீடு செய்யுங்கள்.",
     possibleDisease: "சாத்தியமான நோய்:",
@@ -126,9 +132,11 @@ const translations = {
     symptomTitle: "లక్షణాల తనిఖీ",
     symptomPlaceholder: "మీ లక్షణాలను నమోదు చేయండి...",
     checkBtn: "తనిఖీ చేయు",
-    askTitle: "AI ని అడగండి",
-    askPlaceholder: "ఆరోగ్యం సంబంధిత ప్రశ్నను అడగండి...",
-    askBtn: "అడగు",
+    chatbot: "AI చాట్బాట్",
+    chatbotTitle: "AI చాట్బాట్",
+    chatbotDesc: "మా ప్రియమైన రోబో సహాయకుడితో ఆరోగ్య సలహా కోసం చాట్ చేయండి.",
+    chatPlaceholder: "నన్ను ఏదైనా అడగండి...",
+    sendBtn: "పంపు",
     footer: "© 2024 Cura_Buddy.AI. అన్ని హక్కులు సంరక్షితం.",
     enterSymptomsAlert: "దయచేసి మీ లక్షణాలను నమోదు చేయండి.",
     possibleDisease: "సాధ్యమైన వ్యాధి:",
@@ -325,10 +333,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // Ask AI functionality
-  const askForm = document.getElementById('ask-ai-form');
-  const askInput = document.getElementById('ask-input');
-  const askResult = document.getElementById('ask-result');
+  // Chatbot functionality
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+
+  function appendMessage(sender, message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = sender === 'user' ? 'user-message' : 'ai-message';
+    messageDiv.innerHTML = `<strong>${sender === 'user' ? 'You:' : '🤖🩺 Cura Buddy:'}</strong> ${message}`;
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
 
   function getAIResponse(question, diseases) {
     const q = question.toLowerCase();
@@ -358,16 +374,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     return "I'm here to help with health-related questions. For accurate diagnosis and treatment, please consult a qualified healthcare professional. I can provide general information based on common knowledge.";
   }
 
-  askForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const question = askInput.value.trim();
-    if (!question) {
-      alert(translations[currentLanguage].enterSymptomsAlert || "Please enter a question.");
-      return;
-    }
+  sendBtn.addEventListener('click', async () => {
+    const question = chatInput.value.trim();
+    if (!question) return;
+    appendMessage('user', question);
+    chatInput.value = '';
     const diseases = await loadSymptomsData();
     const response = getAIResponse(question, diseases);
-    askResult.innerHTML = `<p><strong>AI Response:</strong> ${response}</p>`;
-    askResult.style.display = 'block';
+    setTimeout(() => appendMessage('ai', response), 500); // Simulate delay
   });
-});
+
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendBtn.click();
+    }
+  });
+
+  // Welcome message
+  appendMessage('ai', 'Hello! I\'m Cura Buddy 🩺. How can I help you with your health today?');
+})

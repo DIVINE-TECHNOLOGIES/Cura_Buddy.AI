@@ -1,7 +1,0 @@
-- [x] Modify allSymptoms generation to include symptoms from all languages in initial load and language change
-- [x] Update findDiseaseBySymptoms to match against all symptoms in all languages
-- [x] Remove symptom translation logic in symptomForm submit handler
-- [ ] Test the symptom checker in different languages
-- [x] Improve the database by more blood related disease
-- [x] add an option to attach a file to read a blood report
-- [x] Make the Ask AI section working with basic Q&A functionality

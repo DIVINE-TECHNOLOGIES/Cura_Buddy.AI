@@ -17,7 +17,7 @@
                 <li><a href="#home" data-key="home">Home</a></li>
                 <li><a href="#features" data-key="features">Features</a></li>
                 <li><a href="#symptom-checker" data-key="symptomChecker">Symptom Checker</a></li>
-                <li><a href="#ask-ai" data-key="askAI">Ask AI</a></li>
+                <li><a href="#chatbot" data-key="chatbot">AI Chatbot</a></li>
                 <li><a href="#contact" data-key="contact">Contact</a></li>
             </ul>
             <select id="language-selector">
@@ -61,8 +61,8 @@
                 <p data-key="multiDesc">English, Hindi, Tamil, Telugu.</p>
             </div>
             <div class="feature-card">
-                <h3 data-key="aiQA">AI-Powered Q&A</h3>
-                <p data-key="aiDesc">Ask health-related questions and get instant answers.</p>
+                <h3 data-key="chatbotTitle">AI Chatbot</h3>
+                <p data-key="chatbotDesc">Chat with our cute robo assistant for health advice.</p>
             </div>
         </div>
     </section>
@@ -77,13 +77,16 @@
         <div id="result" class="result" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #1E90FF; border-radius: 8px; background-color: #f0f8ff;"></div>
     </section>
 
-    <section id="ask-ai" class="input-section">
-        <h2 data-key="askTitle">Ask AI</h2>
-        <form id="ask-ai-form">
-            <input type="text" id="ask-input" data-key="askPlaceholder" placeholder="Ask a health-related question..." />
-            <button type="submit" data-key="askBtn">Ask</button>
-        </form>
-        <div id="ask-result" class="result" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #1E90FF; border-radius: 8px; background-color: #f0f8ff;"></div>
+    <section id="chatbot" class="chatbot-section">
+        <h2 data-key="chatbotTitle">AI Chatbot</h2>
+        <div class="chatbot-container">
+            <div class="robo-avatar">🤖🩺</div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" data-key="chatPlaceholder" placeholder="Ask me anything..." />
+                <button id="send-btn" data-key="sendBtn">Send</button>
+            </div>
+        </div>
     </section>
 
     <footer id="contact" class="footer-section">
