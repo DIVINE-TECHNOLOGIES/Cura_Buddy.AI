@@ -1,39 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Cura_Buddy.AI – Your AI Healthcare Companion
+## Getting Started
 
-![Cura\_Buddy.AI](https://img.shields.io/badge/Cura_Buddy.AI-AI%20Healthcare%20Assistant-blue)
+First, run the development server:
 
-**Cura_Buddy.AI** is an intelligent AI-powered healthcare assistant designed to provide users with instant medical guidance, symptom analysis, and health recommendations. Our mission is to make **quality healthcare accessible to everyone**, especially in **rural and underserved areas**.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🔹 Features
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-* **Symptom Checker:** Input your symptoms and get possible conditions.
-* **Medication Guidance:** Provides drug information, usage, and side effects.
-* **Health Monitoring:** Tracks vital signs and generates health reports.
-* **Doctor Consultation Support:** Suggests when to seek professional care.
-* **Multi-Language Support:** English, Hindi, and French.
-* **AI-Powered Q&A:** Ask health-related questions and get instant answers.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 🛠️ Tech Stack
+To learn more about Next.js, take a look at the following resources:
 
-* **Frontend:** React.js
-* **Backend:** Flask (Python)
-* **Database:** PostgreSQL / MongoDB
-* **AI & ML:**
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-  * NLP for understanding symptoms and queries
-  * Trained on medical datasets like MIMIC, PubMed, Kaggle
-* **Deployment:** Docker, AWS / Heroku
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 💡 How It Works
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. **User Input:** Users enter symptoms or health queries.
-2. **AI Analysis:** NLP model interprets the input and matches it with medical knowledge.
-3. **Output:** System provides possible conditions, recommendations, and next steps.
-4. **Learning:** AI improves over time with more user interactions and verified medical data.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

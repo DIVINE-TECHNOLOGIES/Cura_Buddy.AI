@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "Your AI-Powered Healthcare Companion",
+    "description": "Experience personalized healthcare guidance with our advanced AI technology. Get instant symptom analysis, medical insights, and connect with healthcare professionals.",
+    "button": "Get Started"
+  },
+  "navbar": {
+    "home": "Home",
+    "features": "Features",
+    "symptomChecker": "Symptom Checker",
+    "chatbot": "AI Chatbot",
+    "contact": "Contact"
+  },
+  "features": {
+    "title": "Features",
+    "description": "Discover the powerful capabilities of our AI healthcare platform",
+    "symptomChecker": {
+      "title": "Symptom Checker",
+      "description": "Input your symptoms and get possible conditions with detailed information."
+    },
+    "medicationGuidance": {
+      "title": "Medication Guidance",
+      "description": "Get comprehensive information about medications, usage, and potential side effects."
+    },
+    "healthMonitoring": {
+      "title": "Health Monitoring",
+      "description": "Track vital signs and generate personalized health reports."
+    },
+    "multiLanguage": {
+      "title": "Multi-Language Support",
+      "description": "Access healthcare information in English, Hindi, Tamil, Telugu, and Spanish."
+    },
+    "aiChatbot": {
+      "title": "AI Chatbot",
+      "description": "Chat with our intelligent AI assistant for instant health advice and guidance."
+    },
+    "emergencySupport": {
+      "title": "Emergency Support",
+      "description": "Quick access to emergency contacts and critical health information."
+    }
+  },
+  "symptomChecker": {
+    "title": "Symptom Checker",
+    "placeholder": "Enter your symptoms...",
+    "button": "Check",
+    "noMatch": "No matching disease found for the given symptoms."
+  },
+  "chatbot": {
+    "title": "Cura AI",
+    "greeting": "Hello! I'm Cura Buddy 🩺. How can I help you with your health today?",
+    "typing": "Cura is typing...",
+    "placeholder": "Ask me anything...",
+    "send": "Send"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have questions about our healthcare services? We're here to help you on your wellness journey.",
+    "info": {
+      "emailTitle": "Email Us",
+      "email": "ayan.ali27111@gmal.com",
+      "phoneTitle": "Call Us",
+      "phone": "9818778507",
+      "hoursTitle": "Office Hours",
+      "hours": "Mon-Fri: 9AM-6PM EST"
+    },
+    "form": {
+      "name": "Full Name *",
+      "email": "Email Address *",
+      "subject": "Subject *",
+      "message": "Message *",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email address",
+      "subjectPlaceholder": "What can we help you with?",
+      "messagePlaceholder": "Please describe your inquiry in detail...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you for your message! We will get back to you within 24 hours.",
+      "error": "Please fill in all fields."
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Cura_Buddy.AI. All rights reserved."
+  }
+}

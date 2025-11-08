@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "Tu Compañero de Salud Impulsado por IA",
+    "description": "Experimenta una guía de salud personalizada con nuestra tecnología avanzada de IA. Obtén análisis instantáneo de síntomas, conocimientos médicos y conecta con profesionales de la salud.",
+    "button": "Comenzar"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "features": "Características",
+    "symptomChecker": "Verificador de Síntomas",
+    "chatbot": "Chatbot de IA",
+    "contact": "Contacto"
+  },
+  "features": {
+    "title": "Características",
+    "description": "Descubre las poderosas capacidades de nuestra plataforma de salud con IA",
+    "symptomChecker": {
+      "title": "Verificador de Síntomas",
+      "description": "Ingresa tus síntomas y obtén posibles condiciones con información detallada."
+    },
+    "medicationGuidance": {
+      "title": "Guía de Medicamentos",
+      "description": "Obtén información completa sobre medicamentos, uso y posibles efectos secundarios."
+    },
+    "healthMonitoring": {
+      "title": "Monitoreo de Salud",
+      "description": "Rastrea signos vitales y genera informes de salud personalizados."
+    },
+    "multiLanguage": {
+      "title": "Soporte Multiidioma",
+      "description": "Accede a información de salud en inglés, hindi, tamil, telugu y español."
+    },
+    "aiChatbot": {
+      "title": "Chatbot de IA",
+      "description": "Chatea con nuestro asistente inteligente de IA para consejos y orientación de salud instantáneos."
+    },
+    "emergencySupport": {
+      "title": "Soporte de Emergencia",
+      "description": "Acceso rápido a contactos de emergencia e información crítica de salud."
+    }
+  },
+  "symptomChecker": {
+    "title": "Verificador de Síntomas",
+    "placeholder": "Ingresa tus síntomas...",
+    "button": "Verificar",
+    "noMatch": "No se encontró ninguna enfermedad coincidente para los síntomas dados."
+  },
+  "chatbot": {
+    "title": "Cura AI",
+    "greeting": "¡Hola! Soy Cura Buddy 🩺. ¿Cómo puedo ayudarte con tu salud hoy?",
+    "typing": "Cura está escribiendo...",
+    "placeholder": "Pregúntame cualquier cosa...",
+    "send": "Enviar"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "description": "¿Tienes preguntas sobre nuestros servicios de salud? Estamos aquí para ayudarte en tu viaje de bienestar.",
+    "info": {
+      "emailTitle": "Envíanos un Correo",
+      "email": "ayan.ali27111@gmal.com",
+      "phoneTitle": "Llámanos",
+      "phone": "9818778507",
+      "hoursTitle": "Horario de Oficina",
+      "hours": "Lun-Vie: 9AM-6PM EST"
+    },
+    "form": {
+      "name": "Nombre Completo *",
+      "email": "Dirección de Correo Electrónico *",
+      "subject": "Asunto *",
+      "message": "Mensaje *",
+      "namePlaceholder": "Ingresa tu nombre completo",
+      "emailPlaceholder": "Ingresa tu dirección de correo electrónico",
+      "subjectPlaceholder": "¿En qué podemos ayudarte?",
+      "messagePlaceholder": "Por favor describe tu consulta en detalle...",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias por tu mensaje! Te responderemos dentro de 24 horas.",
+      "error": "Por favor llena todos los campos."
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Cura_Buddy.AI. Todos los derechos reservados."
+  }
+}
