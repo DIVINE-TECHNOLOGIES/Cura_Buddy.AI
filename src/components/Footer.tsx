@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer-section">
       <p>{t('copyright')}</p>
+      <p>{t('developedBy')}</p>
     </footer>
   );
 };
