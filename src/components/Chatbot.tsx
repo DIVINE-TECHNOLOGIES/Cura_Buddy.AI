@@ -17,6 +17,12 @@ const Chatbot: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string | null>(null);
+  const quickPrompts = [
+    'I have a fever and headache for 2 days. What could it be?',
+    'What foods help boost immunity?',
+    'I feel short of breath and have chest discomfort.',
+    'How can I manage stress and sleep better?',
+  ];
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -124,6 +130,7 @@ const Chatbot: React.FC = () => {
         }, 1500);
       };
       reader.readAsDataURL(file);
+      e.target.value = '';
     }
   };
 
@@ -135,78 +142,137 @@ const Chatbot: React.FC = () => {
         <h2>{t('title')}</h2>
         <p className="section-subtitle">Powered by advanced AI for intelligent health assistance</p>
       </div>
-      <div className="chatbot-container">
-        <div className="robo-avatar">
-          <div className="avatar-glow"></div>
-          <span className="avatar-icon">🤖</span>
-          <span className="avatar-medical">🩺</span>
-        </div>
-        <div className="chat-messages">
-          {messages.length === 0 && (
-            <div className="welcome-message">
-              <div className="welcome-icon">👋</div>
-              <div className="welcome-text">{t('greeting')}</div>
-              <div className="welcome-hint">Ask me about symptoms, health advice, or medications</div>
+      <div className="chatbot-shell">
+        <aside className="chatbot-sidebar">
+          <div className="assistant-card">
+            <div className="assistant-avatar">
+              <span>🤖</span>
             </div>
-          )}
-          {messages.map((msg, index) => (
-            <div key={index} className={`message-wrapper ${msg.type}-message-wrapper`}>
-              <div className={`message ${msg.type}-message`}>
-                {msg.image && (
-                  <div className="message-image">
-                    <Image src={msg.image} alt="Uploaded" width={200} height={200} />
-                  </div>
-                )}
-                <div 
-                  className="message-content"
-                  dangerouslySetInnerHTML={{ __html: formatMessage(msg.text) }}
-                />
-              </div>
+            <div>
+              <p className="assistant-name">Cura AI</p>
+              <p className="assistant-role">Personal Health Assistant</p>
             </div>
-          ))}
-          {isTyping && (
-            <div className="typing-indicator">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
-          {error && <div className="error-message">{error}</div>}
-          <div ref={messagesEndRef} />
-        </div>
-        <div className="chat-input-container">
-          <div className="input-wrapper">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder={t('placeholder')}
-              disabled={isTyping}
-            />
-            <input
-              type="file"
-              ref={fileInputRef}
-              onChange={handleFileChange}
-              accept="image/*"
-              style={{ display: 'none' }}
-            />
-            <button 
-              onClick={handleFileUpload} 
-              className="icon-button"
-              title="Upload Image"
-              disabled={isTyping}
-            >
-              📎
-            </button>
           </div>
-          <button 
-            onClick={handleSend} 
-            className="send-button"
-            disabled={isTyping || !input.trim()}
-          >
-            {isTyping ? '...' : t('send')}
-          </button>
+          <div className="assistant-status">
+            <span className={`status-dot ${isTyping ? 'typing' : 'ready'}`} />
+            <span>{isTyping ? t('typing') : 'Ready for questions'}</span>
+          </div>
+          <div className="assistant-badges">
+            <span className="assistant-badge">Symptom insights</span>
+            <span className="assistant-badge">Medication guidance</span>
+            <span className="assistant-badge">Wellness coaching</span>
+          </div>
+          <div className="assistant-panel">
+            <h3>Try these starters</h3>
+            <div className="assistant-prompt-list">
+              {quickPrompts.map((prompt) => (
+                <button
+                  key={prompt}
+                  type="button"
+                  className="prompt-chip"
+                  onClick={() => setInput(prompt)}
+                  disabled={isTyping}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="assistant-panel">
+            <h3>Safety first</h3>
+            <ul>
+              <li>For emergencies, contact local services.</li>
+              <li>Share duration & severity for better help.</li>
+              <li>Keep meds list handy if possible.</li>
+            </ul>
+          </div>
+        </aside>
+        <div className="chatbot-main">
+          <div className="chatbot-banner">
+            <div className="assistant-note">For emergencies, contact local services immediately.</div>
+            <div className="banner-chips">
+              <span className="banner-chip">24/7 AI</span>
+              <span className="banner-chip">Multi-language</span>
+              <span className="banner-chip">Private & secure</span>
+            </div>
+          </div>
+          <div className="chatbot-container">
+            <div className="robo-avatar">
+              <div className="avatar-glow"></div>
+              <span className="avatar-icon">🤖</span>
+              <span className="avatar-medical">🩺</span>
+            </div>
+            <div className="chat-messages">
+              {messages.length === 0 && (
+                <div className="welcome-message">
+                  <div className="welcome-icon">👋</div>
+                  <div className="welcome-text">{t('greeting')}</div>
+                  <div className="welcome-hint">Ask me about symptoms, health advice, or medications</div>
+                </div>
+              )}
+              {messages.map((msg, index) => (
+                <div key={index} className={`message-wrapper ${msg.type}-message-wrapper`}>
+                  <div className="message-meta">
+                    {msg.type === 'user' ? 'You' : 'Cura AI'}
+                  </div>
+                  <div className={`message ${msg.type}-message`}>
+                    {msg.image && (
+                      <div className="message-image">
+                        <Image src={msg.image} alt="Uploaded" width={200} height={200} />
+                      </div>
+                    )}
+                    <div 
+                      className="message-content"
+                      dangerouslySetInnerHTML={{ __html: formatMessage(msg.text) }}
+                    />
+                  </div>
+                </div>
+              ))}
+              {isTyping && (
+                <div className="typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              )}
+              {error && <div className="error-message">{error}</div>}
+              <div ref={messagesEndRef} />
+            </div>
+            <div className="chat-input-container">
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder={t('placeholder')}
+                  disabled={isTyping}
+                />
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  accept="image/*"
+                  style={{ display: 'none' }}
+                />
+                <button 
+                  onClick={handleFileUpload} 
+                  className="icon-button"
+                  title="Upload Image"
+                  disabled={isTyping}
+                >
+                  📎
+                </button>
+              </div>
+              <button 
+                onClick={handleSend} 
+                className="send-button"
+                disabled={isTyping || !input.trim()}
+              >
+                {isTyping ? '...' : t('send')}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

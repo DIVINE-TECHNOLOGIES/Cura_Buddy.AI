@@ -11,13 +11,27 @@ interface Disease {
 async function getAIResponse(
   question: string,
   diseases: Disease[],
-  _conversationHistory: Array<{ role: string; content: string }>
+  conversationHistory: Array<{ role: string; content: string }>
 ): Promise<string> {
   const q = question.toLowerCase().trim();
+  const conversationText = conversationHistory
+    .map(entry => entry.content)
+    .join(' ')
+    .toLowerCase();
+  const combinedText = `${conversationText} ${q}`.trim();
+
+  const hasDuration = /\b(\d+\s?(hours?|days?|weeks?|months?|years?)|since|for the past|yesterday|today)\b/i.test(combinedText);
+  const hasSeverity = /\b(mild|moderate|severe|sharp|intense|worse|worst|throbbing|burning|stabbing)\b/i.test(combinedText);
+  const hasAge = /\b(\d{1,3})\s?(years? old|yo|y\/o)\b/i.test(combinedText);
+  const hasLocation = /\b(chest|abdomen|stomach|head|throat|back|left|right|upper|lower)\b/i.test(combinedText);
 
   // Check for greetings
   if (q.match(/^(hi|hello|hey|greetings|good morning|good afternoon|good evening)/i)) {
     return "Hello! I'm Cura Buddy AI, your healthcare assistant. I'm here to help you with health-related questions, symptom analysis, and general medical guidance. How can I assist you today?";
+  }
+
+  if (q.match(/(thanks|thank you|appreciate it|thx)/i)) {
+    return "You're welcome! If you have more questions about symptoms, medications, or general health, I'm here to help.";
   }
 
   // Check for specific diseases with better matching
@@ -29,13 +43,13 @@ async function getAIResponse(
     
     symptoms.forEach(symptom => {
       const symptomLower = symptom.toLowerCase();
-      if (q.includes(symptomLower)) {
+      if (combinedText.includes(symptomLower)) {
         matchScore += 2;
       }
       // Check for partial matches
       const symptomWords = symptomLower.split(' ');
       symptomWords.forEach(word => {
-        if (word.length > 3 && q.includes(word)) {
+        if (word.length > 3 && combinedText.includes(word)) {
           matchScore += 0.5;
         }
       });
@@ -58,6 +72,7 @@ async function getAIResponse(
     let response = `Based on your symptoms, you might be experiencing **${name}**.\n\n`;
     response += `**Recommended Treatment:**\n${cure}\n\n`;
     response += `**Common Medications:** ${medicines}\n\n`;
+    response += `**Next Steps:**\n• Monitor how long the symptoms last and whether they are getting worse\n• Note any triggers, recent travel, or contact with sick individuals\n• Share your age and existing conditions if you want more tailored guidance\n\n`;
     
     if (matchedDiseases.length > 1) {
       response += `*Note: I also found similar symptoms for other conditions. `;
@@ -103,6 +118,14 @@ async function getAIResponse(
 
   // Symptom-related questions
   if (q.match(/(symptom|pain|ache|fever|cough|headache|nausea|dizziness)/i)) {
+    if (!hasDuration || !hasSeverity || !hasLocation) {
+      return `I can help with that. To narrow things down, could you share a bit more?\n\n` +
+             `• **How long** have you had the symptoms?\n` +
+             `• **How severe** are they (mild, moderate, severe)?\n` +
+             `• **Where** is the discomfort located, if applicable?\n` +
+             `• Any **other symptoms**, medications, or existing conditions?\n\n` +
+             `*If symptoms are severe or rapidly worsening, please seek urgent medical care.*`;
+    }
     return `I understand you're experiencing symptoms. Here's how I can help:\n\n` +
            `1. **Use the Symptom Checker** section above to get more detailed analysis\n` +
            `2. **Describe your symptoms** in detail for better assistance\n` +
@@ -169,4 +192,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
