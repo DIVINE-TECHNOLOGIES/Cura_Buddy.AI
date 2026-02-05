@@ -2,26 +2,17 @@
 "use client";
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname, Link } from '../../navigation';
 
 const Navbar: React.FC = () => {
   const t = useTranslations('navbar');
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
-  const getLocaleFromPath = (path: string) => {
-    const segments = path.split('/');
-    return segments[1] || 'en';
-  };
-
-  const currentLocale = getLocaleFromPath(pathname);
-
   const handleLanguageChange = (newLocale: string) => {
-    // Remove the current locale from pathname
-    const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '') || '/';
-    // Navigate to the new locale with the same path
-    router.push(pathWithoutLocale, { locale: newLocale });
+    router.push(pathname, { locale: newLocale });
   };
 
   return (
@@ -42,7 +33,7 @@ const Navbar: React.FC = () => {
           <li><Link href="/contact">{t('contact')}</Link></li>
           <li>
             <select
-              value={currentLocale}
+              value={locale}
               onChange={(e) => handleLanguageChange(e.target.value)}
               className="language-selector"
             >
